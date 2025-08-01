@@ -9,14 +9,20 @@ import Product from './pages/Product';
 import Contact from './pages/Contact';
 import PlaceOrder from './pages/PlaceOrder';
 import Orders from './pages/Orders';
+import Footer from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/ReactToastify.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import SearchBar from './components/SearchBar';
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
 	return (
-		<div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] transition-all duration-300'>
-			<NavBar />
+		<div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] transition-all duration-500'>
 			<ToastContainer />
+			<NavBar />
+			<SearchBar />
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/collection' element={<Collection />} />
@@ -27,7 +33,9 @@ const App = () => {
 				<Route path='/login' element={<Login />} />
 				<Route path='/place-order' element={<PlaceOrder />} />
 				<Route path='/orders' element={<Orders />} />
+				<Route path='/product/:productId' element={<Product />} />
 			</Routes>
+			<Footer />
 		</div>
 	);
 };
