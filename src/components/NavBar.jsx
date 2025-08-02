@@ -63,7 +63,7 @@ const NavBar = () => {
 			{/* ----------- Sidebar menu for mobile */}
 			<div
 				id='mobilenav'
-				className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all duration-300 ${
+				className={`absolute top-0 right-0 z-999 bottom-0 overflow-hidden bg-white transition-all duration-300 ${
 					visible ? 'w-full' : 'w-0'
 				}`}>
 				<div className='flex flex-col text-gray-600'>
