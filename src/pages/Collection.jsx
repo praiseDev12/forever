@@ -167,7 +167,7 @@ const Collection = () => {
 	return (
 		<div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t border-gray-600'>
 			{/* Filter options */}
-			<div className='min-w-60'>
+			<div className={`min-w-60 ${!showFilter && 'max-sm:max-h-10'}`}>
 				<p
 					onClick={() => setShowFilter((prev) => !prev)}
 					className='my-2 text-xl flex items-center cursor-pointer gap-2'>
@@ -180,7 +180,7 @@ const Collection = () => {
 				{/* Category Filter */}
 				<div
 					className={`border transition-all duration-500 ease-in-out border-gray-300 pl-5 py-5 mt-6 ${
-						showFilter ? '-translate-x-0' : 'opacity-0 w-0 -translate-x-30'
+						showFilter ? '-translate-x-0' : 'opacity-0 size-0 -translate-x-30'
 					}`}>
 					<p className='mb-3 text-sm font-medium'>CATEGORIES</p>
 					<div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
