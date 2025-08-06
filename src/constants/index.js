@@ -45,13 +45,13 @@ const paymentMethods = [
 		img: assets.stripe_logo,
 		indicator: 'bg-purple-900',
 	},
-	{
-		cod: false,
-		method: 'razorpay',
-		name: 'razor pay',
-		img: assets.razorpay_logo,
-		indicator: 'bg-blue-800',
-	},
+	// {
+	// 	cod: false,
+	// 	method: 'razorpay',
+	// 	name: 'razor pay',
+	// 	img: assets.razorpay_logo,
+	// 	indicator: 'bg-blue-800',
+	// },
 	{
 		cod: true,
 		method: 'cod',

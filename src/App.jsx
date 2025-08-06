@@ -15,6 +15,8 @@ import 'react-toastify/ReactToastify.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import SearchBar from './components/SearchBar';
+import Verify from './pages/Verify';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
@@ -34,6 +36,7 @@ const App = () => {
 				<Route path='/place-order' element={<PlaceOrder />} />
 				<Route path='/orders' element={<Orders />} />
 				<Route path='/product/:productId' element={<Product />} />
+				<Route path='/verify' element={<Verify />} />
 			</Routes>
 			<Footer />
 		</div>

@@ -165,9 +165,12 @@ const Collection = () => {
 	}, [sortType]);
 
 	return (
-		<div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t border-gray-600'>
+		<div className='flex flex-col md:flex-row gap-1 sm:gap-10 pt-10 border-t border-gray-600'>
 			{/* Filter options */}
-			<div className={`min-w-60 ${!showFilter && 'max-sm:max-h-10'}`}>
+			<div
+				className={`min-w-60 md:sticky md:top-30 ${
+					showFilter ? 'h-full' : 'h-10'
+				}`}>
 				<p
 					onClick={() => setShowFilter((prev) => !prev)}
 					className='my-2 text-xl flex items-center cursor-pointer gap-2'>

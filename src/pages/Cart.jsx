@@ -11,21 +11,23 @@ const Cart = () => {
 	const [cartData, setCartData] = useState([]);
 
 	useEffect(() => {
-		let tempData = [];
+		if (products.length > 0) {
+			let tempData = [];
 
-		for (const items in cartItems) {
-			for (const item in cartItems[items]) {
-				if (cartItems[items][item] > 0) {
-					tempData.push({
-						_id: items,
-						size: item,
-						quantity: cartItems[items][item],
-					});
+			for (const items in cartItems) {
+				for (const item in cartItems[items]) {
+					if (cartItems[items][item] > 0) {
+						tempData.push({
+							_id: items,
+							size: item,
+							quantity: cartItems[items][item],
+						});
+					}
 				}
 			}
+			setCartData(tempData);
 		}
-		setCartData(tempData);
-	}, [cartItems]);
+	}, [cartItems, products]);
 
 	return (
 		<div className='border-t pt-14'>
@@ -86,7 +88,6 @@ const Cart = () => {
 									className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1'
 									min={1}
 									value={item.quantity}
-									defaultValue={item.quantity}
 								/>
 								<img
 									src={assets.bin_icon}
@@ -100,13 +101,15 @@ const Cart = () => {
 
 				<div className='flex justify-end my-20'>
 					<div className='w-full sm:w-[450px]'>
-						<CartTotal />
-						<div className='w-full text-end'>
-							<button
-								onClick={() => navigate('/place-order')}
-								className='bg-black cursor-pointer text-white test-sm my-8 px-8 py-3'>
-								PROCEED TO CHECKOUT
-							</button>
+						<div className='md:sticky md:top-1/2'>
+							<CartTotal />
+							<div className='w-full text-end'>
+								<button
+									onClick={() => navigate('/place-order')}
+									className='bg-black cursor-pointer text-white test-sm my-8 px-8 py-3'>
+									PROCEED TO CHECKOUT
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
